@@ -15,7 +15,7 @@ It does the following:
    'walking_upstairs', and so on, according to the original code book.
 5. Appropriately labels the data set with descriptive variable names. For
    example, 'tBodyAcc-mean()-X' was converted to 'tBodyAccMeanX'. This step
-   generates `UCI-HAR-Dataset.tidy.txt`.
+   generates `tidy.csv`.
 6. From the data set in step 4, creates a second, independent tidy data set.
    with the average of each variable for each activity and each subject. This
-   step generates `UCI-HAR-Dataset.tidy.mean.txt`.
+   step generates `tidy.mean.csv` and `tidy.mean.txt`.

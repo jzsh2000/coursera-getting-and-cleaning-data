@@ -47,16 +47,16 @@ feature.subset.name = gsub('mean', 'Mean', feature.subset.name)
 feature.subset.name = gsub('std', 'Std', feature.subset.name)
 
 colnames(data.clean)[-c(1,2)] = feature.subset.name
-write.csv(data.clean, "UCI-HAR-Dataset.tidy.csv", row.names = FALSE)
+write.csv(data.clean, "tidy.csv", row.names = FALSE)
 
 ## Creates a second, independent tidy data set with the average of each
 ## variable for each activity and each subject.
 data.clean.mean = aggregate(.~subject+activity, data=data.clean, mean)
 data.clean.mean = arrange(data.clean.mean, as.numeric(as.character(subject)), activity)
 data.clean.mean[,3:ncol(data.clean.mean)] = signif(data.clean.mean[,3:ncol(data.clean.mean)], digits=7)
-write.csv(data.clean.mean, "UCI-HAR-Dataset.tidy.mean.csv", row.names = FALSE)
+write.csv(data.clean.mean, "tidy.mean.csv", row.names = FALSE)
 
 ## Last step. According to the instruction, save the data set as a txt file
 ## created with write.table() using row.name=FALSE. But this txt file won't be
 ## uploaded to github.
-write.table(data.clean.mean, "UCI-HAR-Dataset.tidy.mean.txt", row.names = FALSE)
+write.table(data.clean.mean, "tidy.mean.txt", row.names = FALSE)
